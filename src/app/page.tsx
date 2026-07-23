@@ -25,12 +25,12 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import Navbar from "@/components/Navbar";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import BookingForm from "@/components/BookingForm";
-import DiscountPopup from "@/components/DiscountPopup";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import treatments from "../data/treatment";
 import HeroSection from "../sections/hero-section";
+import Doct from "../../public/doct.png";
 
 // FAQ Items
 const faqs = [
@@ -91,6 +91,7 @@ const testimonials = [
 export default function Home() {
   const [activeTreatmentTab, setActiveTreatmentTab] = useState<"hair" | "skin">("skin");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [selectedTreatment, setSelectedTreatment] = useState("");
 
   const handleScrollToSection = (id: string) => {
     const element = document.querySelector(id);
@@ -106,6 +107,11 @@ export default function Home() {
         behavior: "smooth",
       });
     }
+  };
+
+  const handleReserveTreatment = (treatmentName: string) => {
+    setSelectedTreatment(treatmentName);
+    handleScrollToSection("#contact");
   };
 
   return (
@@ -152,7 +158,7 @@ export default function Home() {
   {/* Premium Background Blurs */}
   <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/5 dark:bg-brand-gold/5 rounded-full blur-[120px]" />
-    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-sage/10 dark:bg-brand-olive/5 rounded-full blur-[120px]" />
+    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-sage/7 dark:bg-brand-olive/5 rounded-full blur-[120px]" />
   </div>
 
   <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
@@ -267,90 +273,116 @@ export default function Home() {
     >
       {treatments[activeTreatmentTab].map((treatment, idx) => (
         <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            show: { 
-              opacity: 1, 
-              y: 0, 
-              transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } 
-            },
-          }}
-          key={treatment.title}
-          className="group relative rounded-[2.5rem] h-[480px] flex flex-col justify-between overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.05)] hover:shadow-[0_24px_48px_-12px_rgba(194,163,79,0.25)] hover:-translate-y-2 transition-all duration-700 isolate"
-        >
-          {/* 1. Background Image with Cinematic Slow Zoom */}
-          {treatment.image && (
-            <Image
-              src={treatment.image}
-              alt={treatment.title}
-              fill
-              className="object-cover absolute inset-0 z-0 scale-105 group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          )}
+      variants={{
+        hidden: { opacity: 0, y: 40 },
+        show: { 
+          opacity: 1, 
+          y: 0, 
+          transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+        },
+      }}
+      key={treatment.title}
+      className="group relative h-[500px] w-full flex flex-col justify-between overflow-hidden rounded-[2rem] bg-[#12160F] border border-white/5 shadow-[0_16px_40px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-[#C5A85A]/30 hover:shadow-[0_30px_60px_-15px_rgba(87,111,70,0.3)] isolate"
+    >
+      {/* 1. Background Treatment Media with Cinematic Super-Slow Zoom */}
+      {treatment.image && (
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Image
+            src={treatment.image}
+            alt={treatment.title}
+            fill
+            className="object-cover scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={idx < 3}
+          />
+        </div>
+      )}
 
-          {/* 2. Rich Gradient Overlays for Text Legibility */}
-          {/* Top gradient for the price pill */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-0 opacity-80" />
-          
-          {/* Heavy bottom gradient for the text and buttons */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#12140E] via-[#12140E]/80 to-transparent z-0 h-full" />
-          
-          {/* Subtle color tint on hover */}
-          <div className="absolute inset-0 bg-brand-olive/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0" />
+      {/* 2. Advanced Multi-Layer Editorial Gradients */}
+      {/* Ambient Top Shadow for Price Tag readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10 pointer-events-none" />
+      
+      {/* Deep Luxury Olive/Charcoal Vignette Shadow to cradle the text layout */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0F130C] via-[#151A10]/70 to-transparent z-10 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0F130C] via-[#0F130C]/40 to-transparent h-full z-10" />
 
-          {/* 3. Asymmetrical Typography Watermark (Behind Text, Over Image) */}
-          <div 
-            className="absolute -right-2 top-20 text-[120px] font-serif font-bold text-white/5 pointer-events-none group-hover:scale-110 group-hover:-translate-x-4 transition-all duration-1000 ease-out z-0" 
-            aria-hidden="true"
-          >
-            0{idx + 1}
+      {/* Dynamic Luminous Olive Glow Overlay on Hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#576F46]/10 via-transparent to-[#C5A85A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
+
+      {/* 3. Luxury Watermark Details (Index Counter & Logo Sparkle Element) */}
+      <div className="absolute right-6 top-16 flex flex-col items-end opacity-15 select-none pointer-events-none z-10 group-hover:opacity-25 transition-all duration-1000 ease-out">
+        <span className="font-serif text-[110px] font-light leading-none tracking-tighter text-white/50">
+          {(idx + 1).toString().padStart(2, "0")}
+        </span>
+        {/* Signature 4-pointed Star from the SkinOvationS Logo */}
+        <svg className="w-5 h-5 text-[#C5A85A] fill-current mt-2 -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100" viewBox="0 0 24 24">
+          <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.6L12 0Z" />
+        </svg>
+      </div>
+
+      {/* 4. Foreground Content Layout */}
+      <div className="relative z-20 p-8 sm:p-9 h-full flex flex-col justify-between">
+        
+        {/* Top Segment: Luxury Price Badge */}
+        <div className="flex items-start justify-end">
+          <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#12160F]/60 border border-white/10 text-[11px] font-medium tracking-[0.2em] text-[#EADCC3] backdrop-blur-md shadow-inner group-hover:border-[#C5A85A]/40 group-hover:text-[#C5A85A] transition-all duration-500 uppercase">
+            {treatment.price}
+          </span>
+        </div>
+        
+        {/* Bottom Segment: Text & Dynamic CTA Action */}
+        <div className="space-y-6 mt-auto">
+          <div className="space-y-2.5">
+            <h3 className="font-serif text-2xl sm:text-[1.65rem] font-normal text-white leading-tight tracking-wide group-hover:text-[#EADCC3] transition-colors duration-500">
+              {treatment.title}
+            </h3>
+            <p className="text-[13px] sm:text-[13.5px] text-white/60 leading-relaxed font-light tracking-wide max-w-[92%] transition-colors duration-500 group-hover:text-white/75">
+              {treatment.desc}
+            </p>
           </div>
-
-          <div className="relative z-10 p-8 sm:p-10 h-full flex flex-col justify-between">
-            
-            {/* Top Section: Floating Price Pill */}
-            <div className="flex items-start justify-end">
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-black/40 border border-white/20 text-[10px] font-semibold tracking-[0.15em] text-white backdrop-blur-md group-hover:border-brand-gold/50 group-hover:text-brand-gold-light transition-colors duration-500">
-                {treatment.price}
+          
+          {/* Action Row Component */}
+          <div className="pt-5 border-t border-white/10 flex items-center justify-between group-hover:border-[#C5A85A]/20 transition-colors duration-500">
+            <button
+              onClick={() => handleReserveTreatment(treatment.title)}
+              className="relative overflow-hidden flex items-center gap-3 py-1 group/btn"
+              aria-label={`Reserve your appointment for ${treatment.title}`}
+            >
+              {/* Premium Slide-under Line effect */}
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#C5A85A] group-hover/btn:text-white transition-colors duration-300">
+                Reserve Session
               </span>
-            </div>
-            
-            {/* Bottom Section: Editorial Content & CTAs */}
-            <div className="space-y-8 mt-auto">
-              <div className="space-y-3 pr-4">
-                <h3 className="font-serif text-2xl sm:text-3xl font-medium text-white leading-tight group-hover:text-brand-gold-light transition-colors duration-500 drop-shadow-md">
-                  {treatment.title}
-                </h3>
-                <p className="text-[13px] sm:text-[14px] text-white/70 leading-relaxed font-light tracking-wide drop-shadow-sm">
-                  {treatment.desc}
-                </p>
+              
+              {/* Premium Custom Micro-arrow Animation */}
+              <div className="relative w-4 h-4 overflow-hidden">
+                <svg 
+                  className="w-4 h-4 stroke-[#C5A85A] stroke-[1.5] fill-none absolute left-0 transition-transform duration-300 group-hover/btn:translate-x-4 group-hover/btn:opacity-0" 
+                  viewBox="0 0 24 24"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+                <svg 
+                  className="w-4 h-4 stroke-white stroke-[1.5] fill-none absolute -left-4 opacity-0 transition-all duration-300 group-hover/btn:translate-x-4 group-hover/btn:opacity-100" 
+                  viewBox="0 0 24 24"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
               </div>
               
-              {/* Minimalist Call to Action Area */}
-              <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                <button
-                  onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-[10px] font-bold text-white/90 uppercase tracking-[0.15em] flex items-center gap-2 group/btn hover:text-brand-gold-light transition-colors duration-300"
-                >
-                  Explore 
-                  <span className="group-hover/btn:translate-x-1.5 transition-transform duration-500 text-brand-gold-light">→</span>
-                </button>
-                
-                {/* Morphing Reserve Button */}
-                <button
-                  onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-                  className="relative px-6 py-3 overflow-hidden rounded-full border border-white/30 group/book transition-all duration-500 hover:border-transparent bg-black/20 backdrop-blur-sm"
-                >
-                  <span className="absolute inset-0 bg-brand-gold translate-y-[100%] group-hover/book:translate-y-0 transition-transform duration-500 ease-[0.22,1,0.36,1]" />
-                  <span className="relative z-10 text-[10px] font-bold uppercase tracking-[0.15em] text-white group-hover/book:text-[#12140E] transition-colors duration-500 delay-75">
-                    Reserve
-                  </span>
-                </button>
-              </div>
-            </div>
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover/btn:w-full" />
+            </button>
+
+            {/* Subtle Brand Logo Stamp Indicator */}
+            <span className="text-[9px] font-mono uppercase tracking-widest text-white/20 select-none group-hover:text-[#576F46]/60 transition-colors duration-500">
+              SkinOvationS
+            </span>
           </div>
-        </motion.div>
+
+        </div>
+      </div>
+    </motion.div>
       ))}
     </motion.div>
   </AnimatePresence>
@@ -643,7 +675,7 @@ export default function Home() {
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full aspect-[4/5] max-w-sm rounded-[2rem] overflow-hidden border border-brand-gold/20 shadow-xl bg-zinc-150">
                 <Image
-                  src="/doctor_profile.png"
+                  src={Doct}
                   alt="Dr. Abdul Khaliq"
                   fill
                   className="object-cover"
@@ -830,7 +862,7 @@ export default function Home() {
 
             {/* Form Column */}
             <div className="lg:col-span-7 w-full">
-              <BookingForm />
+              <BookingForm selectedTreatment={selectedTreatment} />
             </div>
           </div>
         </div>
@@ -955,7 +987,6 @@ export default function Home() {
 
       {/* Floating Action Buttons */}
       <WhatsAppButton />
-      <DiscountPopup />
     </div>
   );
 }

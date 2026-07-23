@@ -13,14 +13,11 @@ export default function DiscountPopup() {
   const promoCode = "SKINOVATIONS30";
 
   useEffect(() => {
-    // Check if user has already dismissed or claimed the offer
-    const isDismissed = localStorage.getItem("skin_discount_dismissed");
-    if (!isDismissed) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 4000); // Trigger after 4 seconds
-      return () => clearTimeout(timer);
-    }
+    const timer = window.setTimeout(() => {
+      setIsOpen(true);
+    }, 10_000);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   const handleClose = () => {

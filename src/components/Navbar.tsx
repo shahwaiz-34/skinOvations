@@ -23,13 +23,7 @@ export default function Navbar() {
     const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     
-    if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
+   
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -108,15 +102,7 @@ export default function Navbar() {
 
           {/* Action buttons (Theme Toggle & CTA) */}
           <div className="hidden lg:flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="relative p-2.5 rounded-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/50 dark:border-white/10 hover:border-zinc-300 dark:hover:border-white/20 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all duration-300 group overflow-hidden"
-              aria-label="Toggle Dark/Light Mode"
-            >
-              <div className="relative z-10 transition-transform duration-500 group-hover:rotate-12">
-                {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </div>
-            </button>
+          
 
             <a
               href="#contact"

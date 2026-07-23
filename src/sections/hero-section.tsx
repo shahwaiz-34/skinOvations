@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sparkles, Calendar, Award } from "lucide-react";
-import Hero_img from "../../public/skincare_hero.png";
+import Hero_img from "../../public/h.jpg";
 
 
 export default function HeroSection() {
@@ -99,7 +99,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-white/40 dark:bg-black/20 backdrop-blur-md border border-brand-gold/20 dark:border-brand-gold/10 text-brand-olive-dark dark:text-brand-gold-light text-[11px] font-semibold uppercase tracking-[0.15em] rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
             >
               <Sparkles className="w-3.5 h-3.5 text-brand-gold animate-pulse-subtle" /> 
-              SkinOvationS Rawalpindi & Islamabad
+              SkinOvationS Rawalpindi
             </motion.div>
 
             {/* Headline */}

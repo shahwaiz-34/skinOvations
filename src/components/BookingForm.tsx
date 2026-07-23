@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -26,7 +26,11 @@ const bookingSchema = z.object({
 
 type BookingFormValues = z.infer<typeof bookingSchema>;
 
-export default function BookingForm() {
+interface BookingFormProps {
+  selectedTreatment?: string;
+}
+
+export default function BookingForm({ selectedTreatment }: BookingFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successData, setSuccessData] = useState<BookingFormValues | null>(null);
 
@@ -34,6 +38,7 @@ export default function BookingForm() {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<BookingFormValues>({
     resolver: zodResolver(bookingSchema),
@@ -51,6 +56,12 @@ export default function BookingForm() {
       agreePolicy: false,
     },
   });
+
+  useEffect(() => {
+    if (selectedTreatment) {
+      setValue("treatment", selectedTreatment, { shouldValidate: true });
+    }
+  }, [selectedTreatment, setValue]);
 
   const onSubmit = async (data: BookingFormValues) => {
     setIsSubmitting(true);
@@ -191,24 +202,44 @@ export default function BookingForm() {
               } bg-zinc-50 dark:bg-zinc-900/50 text-brand-charcoal dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-gold transition-all`}
             >
               <option value="">-- Choose Category --</option>
-              <optgroup label="Hair Treatments">
-                <option value="FUE Hair Transplant">FUE Hair Transplant</option>
-                <option value="DHI Hair Transplant">DHI Hair Transplant</option>
-                <option value="Hair Line Reconstruction">Hairline Reconstruction</option>
-                <option value="Female Hair Transplant">Female Hair Transplant</option>
-                <option value="Exosomes for Hair Care">Exosomes for Hair Growth</option>
-              </optgroup>
-              <optgroup label="Laser & Skincare">
-                <option value="Diode Laser Hair Removal">Laser Hair Removal</option>
-                <option value="HydraFacial Therapy">HydraFacial</option>
-                <option value="Chemical Peel Treatment">Chemical Peel</option>
-                <option value="CO2 Fractional Laser (Acne Scars)">CO2 Fractional Laser</option>
-                <option value="Pico Laser (Melasma/Hyperpigmentation)">Pico Laser</option>
-                <option value="PRP with Microneedling">PRP with Microneedling</option>
-                <option value="Botox & Fillers">Botox / Fillers</option>
-                <option value="HIFU (Non-Surgical Lift)">HIFU (Face Lift)</option>
-                <option value="Skin Lightening Drips">Skin Lightening Drips</option>
-              </optgroup>
+              {selectedTreatment && (
+                <option value={selectedTreatment}>{selectedTreatment}</option>
+              )}
+  
+  <optgroup label="Hair Treatments">
+    <option value="Laser hair removal">Laser Hair Removal</option>
+    <option value="DIOD laser hair removal">DIOD Laser Hair Removal</option>
+    <option value="Exosomes for hair">Exosomes for Hair</option>
+    <option value="PRP with microneedling">PRP with Microneedling</option>
+    <option value="FUE hair transplant">FUE Hair Transplant</option>
+    <option value="Fue dhi hair transplant">FUE DHI Hair Transplant</option>
+    <option value="Female hair transplant">Female Hair Transplant</option>
+    <option value="Facial hair removal">Facial Hair Removal</option>
+    <option value="Man facial hair removal">Man Facial Hair Removal</option>
+    <option value="Underarm hair removal">Underarm Hair Removal</option>
+    <option value="Arm hair removal">Arm Hair Removal</option>
+    <option value="Legs hair removal">Legs Hair Removal</option>
+    <option value="Chest hair removal">Chest Hair Removal</option>
+    <option value="Male body hair removal">Male Body Hair Removal</option>
+    <option value="Hair line hair removal">Hairline Hair Removal</option>
+    <option value="Lips hair removal">Lips Hair Removal</option>
+    <option value="Ear hair removal">Ear Hair Removal</option>
+  </optgroup>
+
+  <optgroup label="Laser & Skincare">
+    <option value="Botox">Botox</option>
+    <option value="Filler for face">Filler for Face</option>
+    <option value="Exosomes for skin">Exosomes for Skin</option>
+    <option value="HIFU Skin Tightening">HIFU Skin Tightening</option>
+    <option value="co2 Laser Resurfacing for acne scars">CO2 Laser Resurfacing for Acne Scars</option>
+    <option value="PICO Laser">PICO Laser</option>
+    <option value="Acne scars treatment">Acne Scars Treatment</option>
+    <option value="Skin Lightening drips">Skin Lightening Drips</option>
+  </optgroup>
+    
+  
+ 
+
             </select>
             {errors.treatment && (
               <span className="text-[10px] text-red-500 mt-1 font-medium">{errors.treatment.message}</span>

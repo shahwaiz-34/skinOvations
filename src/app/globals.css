@@ -6,11 +6,11 @@
 :root {
   /* Core brand colors extracted from logo-skin-ovations.jpeg */
   --background: #F3EFE6; /* Warm cream/ivory from the logo plaque */
-  --foreground: #23261C; /* Deepest olive-charcoal from engraved text shadows */
+  --foreground: #25261c; /* Deepest olive-charcoal from engraved text shadows */
   
   /* The glossy leaf and main text green */
-  --brand-olive: #50623A; 
-  --brand-olive-dark: #324022;
+  --brand-olive: #5e5a22; 
+  --brand-olive-dark: #585619;
   --brand-olive-light: #778E56;
   
   /* The metallic rim and 'S' gold */
@@ -214,7 +214,7 @@ body {
 .dark .swiper-button-prev:hover,
 .dark .swiper-button-next:hover {
   color: var(--brand-gold-light) !important;
-  background: rgba(40, 44, 34, 0.95);
+  background: rgba(164, 213, 89, 0.95);
   border-color: var(--brand-gold);
 }
 
