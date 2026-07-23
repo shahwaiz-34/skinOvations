@@ -115,7 +115,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen text-brand-charcoal dark:text-zinc-100 bg-brand-cream/30 dark:bg-[#121611]">
+    <div className="flex flex-col min-h-screen text-brand-charcoal dark:text-brand-cream bg-brand-cream/30 dark:bg-[#181A10]">
       {/* Navigation Menu */}
       <Navbar />
 
@@ -129,7 +129,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7 }}
-        className="bg-white dark:bg-[#1B201A] border-y border-brand-olive/5 dark:border-brand-gold/10 py-10 relative z-10"
+        className="bg-white dark:bg-[#252918] border-y border-brand-olive/5 dark:border-brand-gold/10 py-10 relative z-10"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-zinc-100 dark:divide-zinc-800">
@@ -154,7 +154,7 @@ export default function Home() {
       </motion.section>
 
       {/* Treatments Section */}
-      <section id="treatments" className="relative py-32 overflow-hidden bg-gradient-to-b from-[#F3EFE6] via-[#FDFBEE] to-[#F3EFE6] dark:from-[#181A14] dark:via-[#1D1F19] dark:to-[#181A14]">
+      <section id="treatments" className="relative py-32 overflow-hidden bg-gradient-to-b from-brand-cream via-brand-ivory to-brand-cream dark:from-[#181A10] dark:via-[#222617] dark:to-[#181A10]">
   {/* Premium Background Blurs */}
   <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/5 dark:bg-brand-gold/5 rounded-full blur-[120px]" />
@@ -178,7 +178,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal dark:text-[#F3EFE6]"
+        className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal dark:text-brand-cream"
       >
         Signature Treatments
       </motion.h2>
@@ -196,7 +196,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="text-[15px] text-brand-charcoal/60 dark:text-[#F3EFE6]/60 leading-relaxed font-light"
+        className="text-[15px] text-brand-charcoal/60 dark:text-brand-cream/60 leading-relaxed font-light"
       >
         We offer clinical-grade aesthetic procedures designed to deliver visible, natural, and long-lasting enhancements.
       </motion.p>
@@ -282,7 +282,7 @@ export default function Home() {
         },
       }}
       key={treatment.title}
-      className="group relative h-[500px] w-full flex flex-col justify-between overflow-hidden rounded-[2rem] bg-[#12160F] border border-white/5 shadow-[0_16px_40px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-[#C5A85A]/30 hover:shadow-[0_30px_60px_-15px_rgba(87,111,70,0.3)] isolate"
+      className="group relative h-[500px] w-full flex flex-col justify-between overflow-hidden rounded-[2rem] bg-[#1B1E12] border border-white/5 shadow-[0_16px_40px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-[#AF9052]/30 hover:shadow-[0_30px_60px_-15px_rgba(89,97,38,0.35)] isolate"
     >
       {/* 1. Background Treatment Media with Cinematic Super-Slow Zoom */}
       {treatment.image && (
@@ -303,11 +303,11 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10 pointer-events-none" />
       
       {/* Deep Luxury Olive/Charcoal Vignette Shadow to cradle the text layout */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0F130C] via-[#151A10]/70 to-transparent z-10 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0F130C] via-[#0F130C]/40 to-transparent h-full z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#14170E] via-[#1B1E12]/70 to-transparent z-10 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#14170E] via-[#14170E]/40 to-transparent h-full z-10" />
 
       {/* Dynamic Luminous Olive Glow Overlay on Hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#576F46]/10 via-transparent to-[#C5A85A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#596126]/10 via-transparent to-[#AF9052]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
 
       {/* 3. Luxury Watermark Details (Index Counter & Logo Sparkle Element) */}
       <div className="absolute right-6 top-16 flex flex-col items-end opacity-15 select-none pointer-events-none z-10 group-hover:opacity-25 transition-all duration-1000 ease-out">
@@ -315,7 +315,7 @@ export default function Home() {
           {(idx + 1).toString().padStart(2, "0")}
         </span>
         {/* Signature 4-pointed Star from the SkinOvationS Logo */}
-        <svg className="w-5 h-5 text-[#C5A85A] fill-current mt-2 -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-[#AF9052] fill-current mt-2 -translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-100" viewBox="0 0 24 24">
           <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.6L12 0Z" />
         </svg>
       </div>
@@ -325,7 +325,7 @@ export default function Home() {
         
         {/* Top Segment: Luxury Price Badge */}
         <div className="flex items-start justify-end">
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#12160F]/60 border border-white/10 text-[11px] font-medium tracking-[0.2em] text-[#EADCC3] backdrop-blur-md shadow-inner group-hover:border-[#C5A85A]/40 group-hover:text-[#C5A85A] transition-all duration-500 uppercase">
+          <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#1B1E12]/60 border border-white/10 text-[11px] font-medium tracking-[0.2em] text-[#EEE5D9] backdrop-blur-md shadow-inner group-hover:border-[#AF9052]/40 group-hover:text-[#AF9052] transition-all duration-500 uppercase">
             {treatment.price}
           </span>
         </div>
@@ -333,7 +333,7 @@ export default function Home() {
         {/* Bottom Segment: Text & Dynamic CTA Action */}
         <div className="space-y-6 mt-auto">
           <div className="space-y-2.5">
-            <h3 className="font-serif text-2xl sm:text-[1.65rem] font-normal text-white leading-tight tracking-wide group-hover:text-[#EADCC3] transition-colors duration-500">
+            <h3 className="font-serif text-2xl sm:text-[1.65rem] font-normal text-white leading-tight tracking-wide group-hover:text-[#EEE5D9] transition-colors duration-500">
               {treatment.title}
             </h3>
             <p className="text-[13px] sm:text-[13.5px] text-white/60 leading-relaxed font-light tracking-wide max-w-[92%] transition-colors duration-500 group-hover:text-white/75">
@@ -342,21 +342,21 @@ export default function Home() {
           </div>
           
           {/* Action Row Component */}
-          <div className="pt-5 border-t border-white/10 flex items-center justify-between group-hover:border-[#C5A85A]/20 transition-colors duration-500">
+          <div className="pt-5 border-t border-white/10 flex items-center justify-between group-hover:border-[#AF9052]/20 transition-colors duration-500">
             <button
               onClick={() => handleReserveTreatment(treatment.title)}
               className="relative overflow-hidden flex items-center gap-3 py-1 group/btn"
               aria-label={`Reserve your appointment for ${treatment.title}`}
             >
               {/* Premium Slide-under Line effect */}
-              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#C5A85A] group-hover/btn:text-white transition-colors duration-300">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#AF9052] group-hover/btn:text-white transition-colors duration-300">
                 Reserve Session
               </span>
               
               {/* Premium Custom Micro-arrow Animation */}
               <div className="relative w-4 h-4 overflow-hidden">
                 <svg 
-                  className="w-4 h-4 stroke-[#C5A85A] stroke-[1.5] fill-none absolute left-0 transition-transform duration-300 group-hover/btn:translate-x-4 group-hover/btn:opacity-0" 
+                  className="w-4 h-4 stroke-[#AF9052] stroke-[1.5] fill-none absolute left-0 transition-transform duration-300 group-hover/btn:translate-x-4 group-hover/btn:opacity-0" 
                   viewBox="0 0 24 24"
                 >
                   <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -375,7 +375,7 @@ export default function Home() {
             </button>
 
             {/* Subtle Brand Logo Stamp Indicator */}
-            <span className="text-[9px] font-mono uppercase tracking-widest text-white/20 select-none group-hover:text-[#576F46]/60 transition-colors duration-500">
+            <span className="text-[9px] font-mono uppercase tracking-widest text-white/20 select-none group-hover:text-[#596126]/60 transition-colors duration-500">
               SkinOvationS
             </span>
           </div>

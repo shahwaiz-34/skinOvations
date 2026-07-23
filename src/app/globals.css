@@ -5,37 +5,37 @@
 
 :root {
   /* Core brand colors extracted from logo-skin-ovations.jpeg */
-  --background: #F3EFE6; /* Warm cream/ivory from the logo plaque */
-  --foreground: #25261c; /* Deepest olive-charcoal from engraved text shadows */
+  --background: #EEE5D9; /* Warm porcelain from the logo plaque */
+  --foreground: #292816; /* Deep engraved olive from the wordmark */
   
   /* The glossy leaf and main text green */
-  --brand-olive: #5e5a22; 
-  --brand-olive-dark: #585619;
-  --brand-olive-light: #778E56;
+  --brand-olive: #596126;
+  --brand-olive-dark: #3F461B;
+  --brand-olive-light: #858B50;
   
   /* The metallic rim and 'S' gold */
-  --brand-gold: #C2A34F; 
-  --brand-gold-dark: #967C33;
-  --brand-gold-light: #DFCA8F;
+  --brand-gold: #AF9052;
+  --brand-gold-dark: #806534;
+  --brand-gold-light: #D7C18F;
   
   /* Supporting neutrals */
-  --brand-cream: #F3EFE6;
-  --brand-cream-dark: #E5DFC8;
-  --brand-charcoal: #23261C;
-  --card-bg: #FCFAF6; /* Slightly lighter than bg for elevated cards */
-  --card-border: rgba(194, 163, 79, 0.2); /* Soft gold border */
+  --brand-cream: #EEE5D9;
+  --brand-cream-dark: #DCD0BD;
+  --brand-charcoal: #292816;
+  --card-bg: #F8F2EA; /* Light porcelain highlight from the logo */
+  --card-border: rgba(175, 144, 82, 0.24); /* Antique gold rim */
 
   /* Extended logo-inspired palette */
-  --brand-ivory: #FDFBEE; /* Brightest highlight from the gold/S */
-  --brand-sage: #899770; /* Soft sage from lighter leaf reflections */
-  --brand-bronze: #8D7431; /* Deep shadow of the gold rim */
+  --brand-ivory: #F8F2EA; /* Brightest porcelain highlight */
+  --brand-sage: #969867; /* Soft leaf highlight */
+  --brand-bronze: #806534; /* Deep shadow of the gold rim */
 }
 
 .dark {
-  --background: #181A14; /* Very deep olive-tinted black */
-  --foreground: #F3EFE6;
-  --card-bg: #20231B;
-  --card-border: rgba(194, 163, 79, 0.15);
+  --background: #181A10; /* Deep olive shadow from the logo */
+  --foreground: #EEE5D9;
+  --card-bg: #252918;
+  --card-border: rgba(175, 144, 82, 0.18);
 }
 
 @theme {
@@ -97,25 +97,25 @@ body {
 
 /* ===== Premium Glassmorphism ===== */
 .glass-panel {
-  background: rgba(252, 250, 246, 0.75);
+  background: rgba(248, 242, 234, 0.78);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(194, 163, 79, 0.15);
+  border: 1px solid rgba(175, 144, 82, 0.18);
 }
 
 .dark .glass-panel {
-  background: rgba(32, 35, 27, 0.75);
+  background: rgba(37, 41, 24, 0.78);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(194, 163, 79, 0.12);
+  border: 1px solid rgba(175, 144, 82, 0.15);
 }
 
 /* ===== Gold Gradient Shimmer Button ===== */
 .btn-gold-shimmer {
-  background: linear-gradient(135deg, #C2A34F, #DFCA8F, #C2A34F);
+  background: linear-gradient(135deg, #AF9052, #D7C18F, #AF9052);
   background-size: 200% auto;
   animation: shimmer 3s infinite linear;
-  color: #181A14;
+  color: #181A10;
   font-weight: 700;
 }
 
@@ -123,21 +123,21 @@ body {
 .gold-divider {
   height: 2px;
   width: 60px;
-  background: linear-gradient(90deg, transparent, #C2A34F, transparent);
+  background: linear-gradient(90deg, transparent, #AF9052, transparent);
 }
 
 .gold-divider-wide {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(194, 163, 79, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(175, 144, 82, 0.5), transparent);
 }
 
 /* ===== Premium Section Gradient BGs ===== */
 .section-gradient-cream {
-  background: linear-gradient(180deg, #F3EFE6 0%, #EFEADF 50%, #E5DFC8 100%);
+  background: linear-gradient(180deg, #F8F2EA 0%, #EEE5D9 50%, #DCD0BD 100%);
 }
 
 .dark .section-gradient-cream {
-  background: linear-gradient(180deg, #181A14 0%, #1D1F19 50%, #23261C 100%);
+  background: linear-gradient(180deg, #181A10 0%, #222617 50%, #292816 100%);
 }
 
 /* ===== Custom scrollbar ===== */
@@ -182,18 +182,18 @@ body {
   color: var(--brand-gold) !important;
   transform: scale(0.5);
   transition: all 0.3s ease;
-  background: rgba(253, 251, 238, 0.85);
+  background: rgba(248, 242, 234, 0.88);
   width: 50px !important;
   height: 50px !important;
   border-radius: 50%;
-  border: 1px solid rgba(194, 163, 79, 0.3);
+  border: 1px solid rgba(175, 144, 82, 0.3);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .dark .swiper-button-prev,
 .dark .swiper-button-next {
-  background: rgba(32, 35, 27, 0.85);
-  border: 1px solid rgba(194, 163, 79, 0.2);
+  background: rgba(37, 41, 24, 0.85);
+  border: 1px solid rgba(175, 144, 82, 0.2);
 }
 
 .swiper-button-prev:after,
@@ -208,25 +208,25 @@ body {
   background: white;
   transform: scale(0.55);
   border-color: var(--brand-gold);
-  box-shadow: 0 4px 20px rgba(194, 163, 79, 0.3);
+  box-shadow: 0 4px 20px rgba(175, 144, 82, 0.3);
 }
 
 .dark .swiper-button-prev:hover,
 .dark .swiper-button-next:hover {
   color: var(--brand-gold-light) !important;
-  background: rgba(164, 213, 89, 0.95);
+  background: rgba(133, 139, 80, 0.95);
   border-color: var(--brand-gold);
 }
 
 /* ===== Premium Text Selection ===== */
 ::selection {
-  background-color: rgba(194, 163, 79, 0.35);
-  color: #181A14;
+  background-color: rgba(175, 144, 82, 0.35);
+  color: #181A10;
 }
 
 .dark ::selection {
-  background-color: rgba(194, 163, 79, 0.5);
-  color: #F3EFE6;
+  background-color: rgba(175, 144, 82, 0.5);
+  color: #EEE5D9;
 }
 
 /* ===== Smooth focus rings ===== */

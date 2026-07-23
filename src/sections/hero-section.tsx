@@ -30,13 +30,13 @@ export default function HeroSection() {
       id="home"
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-[95vh] flex items-center pt-24 pb-16 overflow-hidden bg-gradient-to-br from-[#F3EFE6] to-[#FDFBEE] dark:from-[#181A14] dark:to-[#1D1F19]"
+      className="relative min-h-[95vh] flex items-center pt-24 pb-16 overflow-hidden bg-gradient-to-br from-brand-cream to-brand-ivory dark:from-[#181A10] dark:to-[#222617]"
     >
       {/* 1. Interactive Mouse Light Effect */}
       <div
         className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500"
         style={{
-          background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(194, 163, 79, 0.04), transparent 40%)`,
+          background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(175, 144, 82, 0.07), transparent 40%)`,
         }}
       />
 
@@ -108,7 +108,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.1, ease: luxuryEasing }}
-              className="font-serif text-4xl sm:text-5xl lg:text-[4.2rem] font-medium tracking-tight text-brand-charcoal dark:text-[#F3EFE6] leading-[1.15]"
+              className="font-serif text-4xl sm:text-5xl lg:text-[4.2rem] font-medium tracking-tight text-brand-charcoal dark:text-brand-cream leading-[1.15]"
             >
               Reveal Your Natural Beauty with{" "}
               <span className="relative whitespace-nowrap">
@@ -125,7 +125,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: luxuryEasing }}
-              className="text-brand-charcoal/70 dark:text-[#F3EFE6]/70 text-[15px] sm:text-[17px] font-light leading-relaxed max-w-xl mx-auto lg:mx-0 tracking-wide"
+              className="text-brand-charcoal/70 dark:text-brand-cream/70 text-[15px] sm:text-[17px] font-light leading-relaxed max-w-xl mx-auto lg:mx-0 tracking-wide"
             >
               Restore your hair confidence and achieve radiant skin with our cutting-edge FUE & DHI hair transplants, Pico lasers, Exosomes, and bespoke dermatologist-led solutions.
             </motion.p>
@@ -139,7 +139,7 @@ export default function HeroSection() {
             >
               <button
                 onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-                className="group relative px-8 py-4 bg-brand-olive hover:bg-brand-olive-dark text-white text-[12px] font-semibold uppercase tracking-[0.1em] rounded-full shadow-[0_10px_30px_rgba(80,98,58,0.2)] hover:shadow-[0_15px_40px_rgba(80,98,58,0.3)] transition-all duration-500 overflow-hidden flex items-center justify-center gap-3"
+                className="group relative px-8 py-4 bg-brand-olive hover:bg-brand-olive-dark text-white text-[12px] font-semibold uppercase tracking-[0.1em] rounded-full shadow-[0_10px_30px_rgba(89,97,38,0.25)] hover:shadow-[0_15px_40px_rgba(89,97,38,0.35)] transition-all duration-500 overflow-hidden flex items-center justify-center gap-3"
               >
                 {/* Button Hover Glow */}
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
@@ -149,7 +149,7 @@ export default function HeroSection() {
               
               <button
                 onClick={() => document.querySelector("#treatments")?.scrollIntoView({ behavior: "smooth" })}
-                className="group px-8 py-4 border border-brand-olive/10 dark:border-brand-gold/20 bg-white/50 dark:bg-[#20231B]/50 backdrop-blur-sm text-brand-charcoal dark:text-[#F3EFE6] hover:bg-white dark:hover:bg-[#20231B] text-[12px] font-semibold uppercase tracking-[0.1em] rounded-full shadow-sm hover:shadow-lg transition-all duration-500 flex items-center justify-center"
+                className="group px-8 py-4 border border-brand-olive/10 dark:border-brand-gold/20 bg-white/50 dark:bg-[#252918]/50 backdrop-blur-sm text-brand-charcoal dark:text-brand-cream hover:bg-white dark:hover:bg-[#252918] text-[12px] font-semibold uppercase tracking-[0.1em] rounded-full shadow-sm hover:shadow-lg transition-all duration-500 flex items-center justify-center"
               >
                 View Treatments
               </button>
@@ -170,7 +170,7 @@ export default function HeroSection() {
             <motion.div 
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full aspect-[4/5] sm:aspect-[4/4] max-w-[440px] rounded-t-full rounded-b-[2.5rem] overflow-hidden border-4 border-white/40 dark:border-white/5 shadow-[0_30px_60px_-15px_rgba(80,98,58,0.15)] bg-brand-cream-dark/20 backdrop-blur-sm"
+            className="relative w-full aspect-[4/5] sm:aspect-[4/4] max-w-[440px] rounded-t-full rounded-b-[2.5rem] overflow-hidden border-4 border-white/40 dark:border-white/5 shadow-[0_30px_60px_-15px_rgba(89,97,38,0.2)] bg-brand-cream-dark/20 backdrop-blur-sm"
             >
               <Image
                 src={Hero_img}

@@ -116,13 +116,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Buttons */}
           <div className="flex lg:hidden items-center gap-3 relative z-50">
-            <button
-              onClick={toggleTheme}
-              className="p-2.5 rounded-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-white/10 text-zinc-600 dark:text-zinc-300"
-              aria-label="Toggle Dark/Light Mode"
-            >
-              {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
+
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
