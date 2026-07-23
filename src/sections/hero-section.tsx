@@ -22,7 +22,8 @@ export default function HeroSection() {
   };
 
   // Custom easing for premium, slow-reveal animations
-  const luxuryEasing = [0.22, 1, 0.36, 1];
+  // Keep this as a fixed four-value cubic-bezier tuple rather than `number[]`.
+  const luxuryEasing: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
   return (
     <section
