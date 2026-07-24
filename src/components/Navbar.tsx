@@ -72,8 +72,8 @@ export default function Navbar() {
       <header
         className={`fixed top-0 inset-x-0 z-40 transition-all duration-500 ease-out ${
           isScrolled
-            ? "bg-white/75 dark:bg-[#09090b]/75 backdrop-blur-xl shadow-[0_1px_3px_0_rgba(0,0,0,0.02)] border-b border-zinc-200/50 dark:border-white/5 py-4"
-            : "bg-gradient-to-b from-black/5 to-transparent dark:from-white/5 py-6"
+            ? "bg-brand-ivory/85 dark:bg-[#252918]/85 backdrop-blur-xl shadow-[0_1px_3px_0_rgba(0,0,0,0.02)] border-b border-brand-gold/20 dark:border-brand-gold/15 py-4"
+            : "bg-gradient-to-b from-brand-cream/65 to-transparent dark:from-[#181A10]/45 py-6"
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -120,7 +120,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 rounded-full bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-white/10 text-zinc-800 dark:text-white transition-colors"
+              className="p-2.5 rounded-full bg-brand-ivory dark:bg-[#252918] border border-brand-gold/25 dark:border-brand-gold/20 text-brand-olive-dark dark:text-brand-cream transition-colors"
               aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -131,7 +131,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Backdrop */}
       <div 
-        className={`fixed inset-0 z-40 bg-zinc-900/40 dark:bg-black/60 backdrop-blur-sm transition-opacity duration-500 ease-out lg:hidden ${
+        className={`fixed inset-0 z-40 bg-[#292816]/45 dark:bg-[#10120D]/70 backdrop-blur-sm transition-opacity duration-500 ease-out lg:hidden ${
           isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
@@ -140,7 +140,7 @@ export default function Navbar() {
 
       {/* Mobile Sliding Drawer */}
       <div 
-        className={`fixed inset-y-0 right-0 z-50 w-[85%] max-w-sm bg-white dark:bg-[#09090b] shadow-2xl border-l border-zinc-200/50 dark:border-white/10 flex flex-col justify-between transform transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
+        className={`fixed inset-y-0 right-0 z-50 w-[85%] max-w-sm bg-brand-ivory dark:bg-[#252918] shadow-2xl border-l border-brand-gold/25 dark:border-brand-gold/20 flex flex-col justify-between transform transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -151,7 +151,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleScrollTo(e, link.href)}
-                className="group flex items-center justify-between text-[15px] font-medium tracking-[0.05em] text-zinc-600 dark:text-zinc-300 hover:text-brand-olive dark:hover:text-brand-gold py-4 px-4 rounded-2xl hover:bg-zinc-50 dark:hover:bg-white/5 transition-all duration-300"
+                className="group flex items-center justify-between text-[15px] font-medium tracking-[0.05em] text-brand-charcoal/75 dark:text-brand-cream/75 hover:text-brand-olive dark:hover:text-brand-gold py-4 px-4 rounded-2xl hover:bg-brand-cream dark:hover:bg-brand-olive/15 transition-all duration-300"
                 style={{ 
                   transitionDelay: `${isMobileMenuOpen ? index * 50 : 0}ms`,
                   opacity: isMobileMenuOpen ? 1 : 0,
@@ -168,7 +168,7 @@ export default function Navbar() {
         </div>
 
         {/* Drawer Bottom CTA */}
-        <div className="p-6 bg-zinc-50 dark:bg-white/5 border-t border-zinc-200/50 dark:border-white/10">
+        <div className="p-6 bg-brand-cream/70 dark:bg-brand-olive/10 border-t border-brand-gold/20 dark:border-brand-gold/15">
           <a
             href="#contact"
             onClick={(e) => handleScrollTo(e, "#contact")}
