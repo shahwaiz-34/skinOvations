@@ -912,7 +912,7 @@ export default function Home() {
               <div className="flex items-center gap-2">
                 {/* SVG Emblem for Footer */}
                 <div className="w-10 h-10 bg-brand-cream rounded-full flex items-center justify-center overflow-hidden">
-                  <Image src="/favicon.ico" width={24} height={24} alt="SkinOvationS icon" className="object-contain" />
+                  <Image src="/logo.jpg" width={24} height={24} alt="SkinOvationS logo" className="object-contain rounded-full" />
                 </div>
                 <span className="font-serif text-xl font-bold tracking-tight text-white">
                   Skin<span className="text-brand-gold">OvationS</span>

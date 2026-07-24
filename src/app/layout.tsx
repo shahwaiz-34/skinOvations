@@ -29,7 +29,8 @@ export const metadata: Metadata = {
   keywords: "SkinOvationS, Hair Transplant Islamabad, Hair Transplant Rawalpindi, Laser Clinic Rawalpindi, Botox, Fillers, HydraFacial, PRP, Microneedling, Exosomes Hair and Skin, CO2 Fractional Laser, Melasma Treatment, Dr Abdul Khaliq",
   authors: [{ name: "SkinOvationS" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: [{ url: "/logo.jpg", type: "image/jpeg" }],
+    apple: [{ url: "/logo.jpg", type: "image/jpeg" }],
   },
 };
 
