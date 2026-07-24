@@ -300,11 +300,11 @@ export default function Home() {
 
       {/* 2. Advanced Multi-Layer Editorial Gradients */}
       {/* Ambient Top Shadow for Price Tag readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/23 via-transparent to-transparent z-10 pointer-events-none" />
       
       {/* Deep Luxury Olive/Charcoal Vignette Shadow to cradle the text layout */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#14170E] via-[#1B1E12]/70 to-transparent z-10 mix-blend-multiply" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#14170E] via-[#14170E]/40 to-transparent h-full z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#14170E] via-[#1B1E12]/60 to-transparent z-10 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#14170E] via-[#14170E]/35 to-transparent h-full z-10" />
 
       {/* Dynamic Luminous Olive Glow Overlay on Hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#596126]/10 via-transparent to-[#AF9052]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
